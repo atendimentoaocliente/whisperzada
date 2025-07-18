@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  whisper-api:
+    build: .
+    ports:
+      - "9005:9005"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
