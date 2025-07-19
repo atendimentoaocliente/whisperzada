@@ -1,7 +1,0 @@
-fastapi
-uvicorn[standard]
-torchaudio
-openai-whisper
-
-python-multipart
-
